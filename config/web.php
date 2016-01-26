@@ -4,6 +4,7 @@ $params = require(__DIR__ . '/params.php');
 
 $config = [
     'id' => 'basic',
+	'language'=>'pl',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
@@ -38,6 +39,17 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+    		'urlManager' => [
+    				'enablePrettyUrl' => true,
+    				'showScriptName' => false,
+    				'enableStrictParsing' => false,
+    				'suffix' => '.html',
+    				'rules' => [
+    						'<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+    				],
+    				],
     ],
     'params' => $params,
 ];
