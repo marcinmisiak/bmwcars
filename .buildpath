@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	<buildpathentry kind="src" path="basic"/>
+	<buildpathentry kind="src" path="vendor/ezyang/htmlpurifier/library"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2"/>
+	<buildpathentry kind="src" path="vendor/swiftmailer/swiftmailer/lib"/>
+	<buildpathentry kind="src" path="vendor/phpspec/php-diff/lib"/>
+	<buildpathentry kind="src" path="vendor/cebe/markdown"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-bootstrap"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-debug"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-composer"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-codeception"/>
+	<buildpathentry kind="src" path="vendor/fzaninotto/faker/src/Faker"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-gii"/>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-faker"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-swiftmailer"/>
+	<buildpathentry kind="src" path="vendor/composer"/>
 </buildpath>

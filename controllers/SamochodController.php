@@ -63,30 +63,28 @@ class SamochodController extends Controller
     {
         $model = new Samochod();
         
-        if (Yii::$app->request->isPost ) {
-        	
-        	 
-        	
-        	//var_dump($model->plikMiniatura);exit;
-        	
-        	
-        	
+        if ($model->load(Yii::$app->request->post()) ) {
         	if ($model->upload()) {
-        		// file is uploaded successfully
-        		$model->model = Yii::$app->request->post('model');
-        		$model->pojemnosc = Yii::$app->request->post('pojemnosc');
-        		$model->opis = Yii::$app->request->post('opis');
-        		// return;
+        		if($model->save() ) {
+	        		return $this->redirect(['view', 'id' => $model->id]);
+        		} else {
+        			return $this->render('create', [
+        					'model' => $model,
+        			]);
+        		}
+        	} else {
+        		return $this->render('create', [
+        				'model' => $model,
+        		]);
         	}
-        }
-
-        if (Yii::$app->request->isPost && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        	
+        	
         } else {
             return $this->render('create', [
                 'model' => $model,
             ]);
         }
+     
     }
 
     /**
@@ -98,9 +96,15 @@ class SamochodController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+		
+        if ($model->load(Yii::$app->request->post())) {
+        	
+        	if ($model->upload()) {
+        	
+        		if($model->save() ) {
+           			 return $this->redirect(['view', 'id' => $model->id]);
+        		}
+        	}
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -116,7 +120,26 @@ class SamochodController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+    	$model = $this->findModel($id);
+    	$path = Yii::$app->basePath. DIRECTORY_SEPARATOR.'web'. DIRECTORY_SEPARATOR. 'uploads'. DIRECTORY_SEPARATOR;
+    	if (is_file($path.$model->miniatura)) {
+    		unlink($path.$model->miniatura);
+    	}
+    	if (is_file($path.$model->zdjecie1)) {
+    	unlink($path.$model->zdjecie1);
+    	}
+    	if (is_file($path.$model->zdjecie2)) {
+    	unlink($path.$model->zdjecie2);
+    	}
+    	if (is_file($path.$model->zdjecie3)) {
+    	unlink($path.$model->zdjecie3);
+    	}
+    	if (is_file($path.$model->zdjecie4)) {
+    	unlink($path.$model->zdjecie4);
+    	}
+    	
+        $model->delete();
+        
 
         return $this->redirect(['index']);
     }
@@ -135,5 +158,24 @@ class SamochodController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    
+    public function actionDeletepicture($id, $plik) {
+    	$model = $this->findModel($id);
+    	$path = Yii::$app->basePath. DIRECTORY_SEPARATOR.'web'. DIRECTORY_SEPARATOR. 'uploads'. DIRECTORY_SEPARATOR;
+    	if (is_file($path.$model->$plik)) {
+    		unlink($path.$model->$plik);
+    	}
+    	return $this->redirect(['view', 'id' => $model->id]);
+    }
+    
+    public function actionLista() {
+    	$searchModel = new SamochodSearch();
+    	$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+    	
+    	return $this->render('lista', [
+    			'searchModel' => $searchModel,
+    			'dataProvider' => $dataProvider,
+    	]);
     }
 }

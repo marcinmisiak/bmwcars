@@ -19,11 +19,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'model') ?>
 
+    <?= $form->field($model, 'rocznik') ?>
+
     <?= $form->field($model, 'pojemnosc') ?>
 
-    <?= $form->field($model, 'opis') ?>
+    <?= $form->field($model, 'cena') ?>
 
-    <?= $form->field($model, 'zdjecie1') ?>
+    <?php // echo $form->field($model, 'zdjecie1') ?>
 
     <?php // echo $form->field($model, 'zdjecie2') ?>
 
@@ -32,6 +34,8 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'zdjecie4') ?>
 
     <?php // echo $form->field($model, 'miniatura') ?>
+
+    <?php // echo $form->field($model, 'opis') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

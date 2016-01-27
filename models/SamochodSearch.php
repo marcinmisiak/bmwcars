@@ -19,7 +19,8 @@ class SamochodSearch extends Samochod
     {
         return [
             [['id', 'pojemnosc'], 'integer'],
-            [['model', 'opis', 'zdjecie1', 'zdjecie2', 'zdjecie3', 'zdjecie4', 'miniatura'], 'safe'],
+            [['model', 'rocznik', 'zdjecie1', 'zdjecie2', 'zdjecie3', 'zdjecie4', 'miniatura', 'opis'], 'safe'],
+            [['cena'], 'number'],
         ];
     }
 
@@ -57,16 +58,18 @@ class SamochodSearch extends Samochod
 
         $query->andFilterWhere([
             'id' => $this->id,
+            'rocznik' => $this->rocznik,
             'pojemnosc' => $this->pojemnosc,
+            'cena' => $this->cena,
         ]);
 
         $query->andFilterWhere(['like', 'model', $this->model])
-            ->andFilterWhere(['like', 'opis', $this->opis])
             ->andFilterWhere(['like', 'zdjecie1', $this->zdjecie1])
             ->andFilterWhere(['like', 'zdjecie2', $this->zdjecie2])
             ->andFilterWhere(['like', 'zdjecie3', $this->zdjecie3])
             ->andFilterWhere(['like', 'zdjecie4', $this->zdjecie4])
-            ->andFilterWhere(['like', 'miniatura', $this->miniatura]);
+            ->andFilterWhere(['like', 'miniatura', $this->miniatura])
+            ->andFilterWhere(['like', 'opis', $this->opis]);
 
         return $dataProvider;
     }
