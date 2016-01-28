@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bf915e9adbd134d0f66cd9981c342d0f",
-    "content-hash": "b913b1bf72fe310d15e81b2bb3644f98",
+    "hash": "de2d0e772dcb0999079687ba0dce2c85",
+    "content-hash": "4b235b141ac11f0e1c7bd3fb2b92917d",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -377,6 +377,100 @@
             "time": "2013-11-30 08:25:19"
         },
         {
+            "name": "kop/yii2-scroll-pager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kop/yii2-scroll-pager.git",
+                "reference": "08b19abb2139ff18c91d5178f17891ab2fa14316"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kop/yii2-scroll-pager/zipball/08b19abb2139ff18c91d5178f17891ab2fa14316",
+                "reference": "08b19abb2139ff18c91d5178f17891ab2fa14316",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "webcreate/jquery-ias": "~2.2.0",
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "codeception/codeception": "~2.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "kop\\y2sp\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Koptiev",
+                    "email": "ivan.koptiev@codex.systems",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Infinite AJAX scrolling for Yii2 ListView widget",
+            "homepage": "http://kop.github.io/yii2-scroll-pager/",
+            "keywords": [
+                "pager",
+                "pagination",
+                "scroll",
+                "scrolling",
+                "yii",
+                "yii2"
+            ],
+            "time": "2015-10-19 12:44:33"
+        },
+        {
+            "name": "rsr/yii2-button-dropdown-sorter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RezaSR/yii2-ButtonDropdownSorter.git",
+                "reference": "1871e29c637807e0753b855f081b30f4a1c3a3b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RezaSR/yii2-ButtonDropdownSorter/zipball/1871e29c637807e0753b855f081b30f4a1c3a3b2",
+                "reference": "1871e29c637807e0753b855f081b30f4a1c3a3b2",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "rsr\\yii2\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Reza Saberi Rad",
+                    "email": "rsr_reza@yahoo.com"
+                }
+            ],
+            "description": "Bootstrap ButtonDropdown to use as sorter in yii2",
+            "keywords": [
+                "bootstrap",
+                "dropdown",
+                "sorter",
+                "yii2"
+            ],
+            "time": "2015-05-26 11:36:25"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "5.x-dev",
             "source": {
@@ -428,6 +522,90 @@
                 "mailer"
             ],
             "time": "2016-01-03 15:42:47"
+        },
+        {
+            "name": "wadeshuler/yii2-sliderrevolution",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WadeShuler/yii2-sliderrevolution.git",
+                "reference": "e11f6d472ae0573d6926b567e5fa2af697cd0162"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WadeShuler/yii2-sliderrevolution/zipball/e11f6d472ae0573d6926b567e5fa2af697cd0162",
+                "reference": "e11f6d472ae0573d6926b567e5fa2af697cd0162",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "wadeshuler\\sliderrevolution\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Wade Shuler",
+                    "email": "WadeShuler@users.noreply.github.com"
+                }
+            ],
+            "description": "Yii2 Slider Revolution jQuery Wrapper Extension",
+            "keywords": [
+                "extension",
+                "revolution",
+                "slider",
+                "sliderrevolution",
+                "wadeshuler",
+                "yii2"
+            ],
+            "time": "2015-09-26 03:11:15"
+        },
+        {
+            "name": "webcreate/jquery-ias",
+            "version": "v2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webcreate/infinite-ajax-scroll.git",
+                "reference": "7380f74fca64180a4c5da18d01065a8aef0494b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webcreate/infinite-ajax-scroll/zipball/7380f74fca64180a4c5da18d01065a8aef0494b7",
+                "reference": "7380f74fca64180a4c5da18d01065a8aef0494b7",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary",
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "fieg",
+                    "email": "jeroen@fieg.nl",
+                    "homepage": "http://webcreate.nl"
+                }
+            ],
+            "description": "Infinite AJAX Scroll: A jQuery plugin that turns your server-side pagination into an infinite scrolling one using AJAX",
+            "homepage": "http://infiniteajaxscroll.com",
+            "keywords": [
+                "ajax",
+                "ias",
+                "infinite",
+                "jquery",
+                "pagination",
+                "scroll",
+                "scrolling"
+            ],
+            "time": "2015-05-08 14:58:16"
         },
         {
             "name": "yiisoft/yii2",
@@ -937,7 +1115,10 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "kop/yii2-scroll-pager": 20,
+        "wadeshuler/yii2-sliderrevolution": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

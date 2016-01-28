@@ -352,6 +352,101 @@
         ]
     },
     {
+        "name": "webcreate/jquery-ias",
+        "version": "v2.2.1",
+        "version_normalized": "2.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/webcreate/infinite-ajax-scroll.git",
+            "reference": "7380f74fca64180a4c5da18d01065a8aef0494b7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/webcreate/infinite-ajax-scroll/zipball/7380f74fca64180a4c5da18d01065a8aef0494b7",
+            "reference": "7380f74fca64180a4c5da18d01065a8aef0494b7",
+            "shasum": ""
+        },
+        "time": "2015-05-08 14:58:16",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary",
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "fieg",
+                "email": "jeroen@fieg.nl",
+                "homepage": "http://webcreate.nl"
+            }
+        ],
+        "description": "Infinite AJAX Scroll: A jQuery plugin that turns your server-side pagination into an infinite scrolling one using AJAX",
+        "homepage": "http://infiniteajaxscroll.com",
+        "keywords": [
+            "ajax",
+            "ias",
+            "infinite",
+            "jquery",
+            "pagination",
+            "scroll",
+            "scrolling"
+        ]
+    },
+    {
+        "name": "kop/yii2-scroll-pager",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kop/yii2-scroll-pager.git",
+            "reference": "08b19abb2139ff18c91d5178f17891ab2fa14316"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kop/yii2-scroll-pager/zipball/08b19abb2139ff18c91d5178f17891ab2fa14316",
+            "reference": "08b19abb2139ff18c91d5178f17891ab2fa14316",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "webcreate/jquery-ias": "~2.2.0",
+            "yiisoft/yii2": "*"
+        },
+        "require-dev": {
+            "codeception/codeception": "~2.0"
+        },
+        "time": "2015-10-19 12:44:33",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "kop\\y2sp\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ivan Koptiev",
+                "email": "ivan.koptiev@codex.systems",
+                "role": "Developer"
+            }
+        ],
+        "description": "Infinite AJAX scrolling for Yii2 ListView widget",
+        "homepage": "http://kop.github.io/yii2-scroll-pager/",
+        "keywords": [
+            "pager",
+            "pagination",
+            "scroll",
+            "scrolling",
+            "yii",
+            "yii2"
+        ]
+    },
+    {
         "name": "yiisoft/yii2-composer",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -570,34 +665,40 @@
         ]
     },
     {
-        "name": "yiisoft/yii2-codeception",
+        "name": "2amigos/yii2-ckeditor-widget",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/yiisoft/yii2-codeception.git",
-            "reference": "ee239c244fd011f11c8827f97ebe7600d03f1841"
+            "url": "https://github.com/2amigos/yii2-ckeditor-widget.git",
+            "reference": "65dea6abf7813b1cb9264f7467bf638551d51ba2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/ee239c244fd011f11c8827f97ebe7600d03f1841",
-            "reference": "ee239c244fd011f11c8827f97ebe7600d03f1841",
+            "url": "https://api.github.com/repos/2amigos/yii2-ckeditor-widget/zipball/65dea6abf7813b1cb9264f7467bf638551d51ba2",
+            "reference": "65dea6abf7813b1cb9264f7467bf638551d51ba2",
             "shasum": ""
         },
         "require": {
-            "yiisoft/yii2": ">=2.0.4"
+            "yiisoft/yii2": "~2.0.0"
         },
-        "time": "2015-11-20 08:52:21",
+        "require-dev": {
+            "phpunit/phpunit": "4.*"
+        },
+        "time": "2015-09-02 16:53:55",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.0.x-dev"
+                "dev-master": "1.0-dev"
+            },
+            "asset-installer-paths": {
+                "bower-asset-library": "vendor/bower"
             }
         },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "yii\\codeception\\": ""
+                "dosamigos\\ckeditor\\": "src"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -606,13 +707,21 @@
         ],
         "authors": [
             {
-                "name": "Mark Jebri",
-                "email": "mark.github@yandex.ru"
+                "name": "2amigOS! Consulting Group",
+                "email": "hola@2amigos.us",
+                "homepage": "http://2amigos.us",
+                "role": "Developer"
             }
         ],
-        "description": "The Codeception integration for the Yii framework",
+        "description": "CKEditor widget for Yii2.",
+        "homepage": "http://yiiwheels.com/extension/ckeditor-widget",
         "keywords": [
-            "codeception",
+            "2amigos",
+            "CKEditor",
+            "extension",
+            "widget",
+            "yii",
+            "yii 2",
             "yii2"
         ]
     },
@@ -665,6 +774,98 @@
         "description": "The Twitter Bootstrap extension for the Yii framework",
         "keywords": [
             "bootstrap",
+            "yii2"
+        ]
+    },
+    {
+        "name": "rsr/yii2-button-dropdown-sorter",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/RezaSR/yii2-ButtonDropdownSorter.git",
+            "reference": "1871e29c637807e0753b855f081b30f4a1c3a3b2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/RezaSR/yii2-ButtonDropdownSorter/zipball/1871e29c637807e0753b855f081b30f4a1c3a3b2",
+            "reference": "1871e29c637807e0753b855f081b30f4a1c3a3b2",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*",
+            "yiisoft/yii2-bootstrap": "*"
+        },
+        "time": "2015-05-26 11:36:25",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "rsr\\yii2\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Reza Saberi Rad",
+                "email": "rsr_reza@yahoo.com"
+            }
+        ],
+        "description": "Bootstrap ButtonDropdown to use as sorter in yii2",
+        "keywords": [
+            "bootstrap",
+            "dropdown",
+            "sorter",
+            "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-codeception",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-codeception.git",
+            "reference": "ee239c244fd011f11c8827f97ebe7600d03f1841"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/ee239c244fd011f11c8827f97ebe7600d03f1841",
+            "reference": "ee239c244fd011f11c8827f97ebe7600d03f1841",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": ">=2.0.4"
+        },
+        "time": "2015-11-20 08:52:21",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "yii\\codeception\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Mark Jebri",
+                "email": "mark.github@yandex.ru"
+            }
+        ],
+        "description": "The Codeception integration for the Yii framework",
+        "keywords": [
+            "codeception",
             "yii2"
         ]
     },
@@ -902,63 +1103,48 @@
         ]
     },
     {
-        "name": "2amigos/yii2-ckeditor-widget",
+        "name": "wadeshuler/yii2-sliderrevolution",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/2amigos/yii2-ckeditor-widget.git",
-            "reference": "65dea6abf7813b1cb9264f7467bf638551d51ba2"
+            "url": "https://github.com/WadeShuler/yii2-sliderrevolution.git",
+            "reference": "e11f6d472ae0573d6926b567e5fa2af697cd0162"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/2amigos/yii2-ckeditor-widget/zipball/65dea6abf7813b1cb9264f7467bf638551d51ba2",
-            "reference": "65dea6abf7813b1cb9264f7467bf638551d51ba2",
+            "url": "https://api.github.com/repos/WadeShuler/yii2-sliderrevolution/zipball/e11f6d472ae0573d6926b567e5fa2af697cd0162",
+            "reference": "e11f6d472ae0573d6926b567e5fa2af697cd0162",
             "shasum": ""
         },
         "require": {
-            "yiisoft/yii2": "~2.0.0"
+            "yiisoft/yii2": "*"
         },
-        "require-dev": {
-            "phpunit/phpunit": "4.*"
-        },
-        "time": "2015-09-02 16:53:55",
+        "time": "2015-09-26 03:11:15",
         "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0-dev"
-            },
-            "asset-installer-paths": {
-                "bower-asset-library": "vendor/bower"
-            }
-        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "dosamigos\\ckeditor\\": "src"
+                "wadeshuler\\sliderrevolution\\": ""
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "BSD-3-Clause"
+            "MIT"
         ],
         "authors": [
             {
-                "name": "2amigOS! Consulting Group",
-                "email": "hola@2amigos.us",
-                "homepage": "http://2amigos.us",
-                "role": "Developer"
+                "name": "Wade Shuler",
+                "email": "WadeShuler@users.noreply.github.com"
             }
         ],
-        "description": "CKEditor widget for Yii2.",
-        "homepage": "http://yiiwheels.com/extension/ckeditor-widget",
+        "description": "Yii2 Slider Revolution jQuery Wrapper Extension",
         "keywords": [
-            "2amigos",
-            "CKEditor",
             "extension",
-            "widget",
-            "yii",
-            "yii 2",
+            "revolution",
+            "slider",
+            "sliderrevolution",
+            "wadeshuler",
             "yii2"
         ]
     }

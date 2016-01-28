@@ -100,10 +100,13 @@ class SamochodController extends Controller
         if ($model->load(Yii::$app->request->post())) {
         	
         	if ($model->upload()) {
-        	
         		if($model->save() ) {
            			 return $this->redirect(['view', 'id' => $model->id]);
         		}
+        	} else {
+        	if($model->save() ) {
+           			 return $this->redirect(['view', 'id' => $model->id]);
+        		};
         	}
         } else {
             return $this->render('update', [
@@ -176,6 +179,12 @@ class SamochodController extends Controller
     	return $this->render('lista', [
     			'searchModel' => $searchModel,
     			'dataProvider' => $dataProvider,
+    	]);
+    }
+    
+    public function actionSzczegoly($id){
+    	return $this->render('szczegoly', [
+    			'model' => $this->findModel($id),
     	]);
     }
 }

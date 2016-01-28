@@ -12,6 +12,8 @@ use app\models\Samochod;
  */
 class SamochodSearch extends Samochod
 {
+	public $pageSize = 10;
+	
     /**
      * @inheritdoc
      */
@@ -46,6 +48,10 @@ class SamochodSearch extends Samochod
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+        		'sort' => ['defaultOrder' => ['rocznik' => SORT_DESC]],
+        		'pagination' => [
+        				'pageSize' => $this->pageSize,
+        		],
         ]);
 
         $this->load($params);

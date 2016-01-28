@@ -3,6 +3,7 @@
 	<buildpathentry kind="src" path="vendor/ezyang/htmlpurifier/library"/>
 	<buildpathentry kind="src" path="vendor/yiisoft/yii2"/>
 	<buildpathentry kind="src" path="vendor/swiftmailer/swiftmailer/lib"/>
+	<buildpathentry kind="src" path="vendor/2amigos/yii2-ckeditor-widget/src"/>
 	<buildpathentry kind="src" path="vendor/phpspec/php-diff/lib"/>
 	<buildpathentry kind="src" path="vendor/cebe/markdown"/>
 	<buildpathentry kind="src" path="vendor/yiisoft/yii2-bootstrap"/>

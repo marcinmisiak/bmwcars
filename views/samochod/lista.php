@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\ListView;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\SamochodSearch */
@@ -12,32 +13,61 @@ $this->title = 'Samochody od zaraz';
 // $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+<div class="row">
+    <?php $form = ActiveForm::begin(['method'=>'get']); ?>
+<div class="col-lg-3">
+    <?= $form->field($searchModel, 'model') ?>
+</div>
+<div class="col-lg-3">
+    <?= $form->field($searchModel, 'rocznik') ?>
+</div>
+<div class="col-lg-3">
+    <?= $form->field($searchModel, 'pojemnosc') ?>
+</div>
+
+
+   <div class="col-lg-3">
+        <?= Html::submitButton('Szukaj', ['class' => 'btn btn-success btnSzukaj']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+</div>
+
+
+<div class="row">
  <?= ListView::widget([
     'dataProvider' => $dataProvider,
+ 		
  		'itemView' => '_view',
+ 		'layout' => "<div class='sortowanie'>{sorter}</div><div class='row'>{items}</div><div class='row'>\n</div>\n<div class='row'>{pager}</div>",
+ 		'sorter' =>[
+ 				
+ 						'class' => 'rsr\yii2\ButtonDropdownSorter',
+ 						'label' => 'Sortuj po',
+ 				
+ 				
+ 				'attributes'=>['rocznik', 'cena', 'pojemnosc'],
+ 				// 'options'=>['class'=>'sorter ', 				 		'triggerTemplate '=> '<div class="row ias-trigger" style="text-align: center; cursor: pointer;"><a>{text}</a></div>', ]
+ 				
+ 		],
+ 		'pager' => ['class' => \kop\y2sp\ScrollPager::className()],
+ 	//	'summaryOptions' =>['class'=>'row pull-right'],
+ 		'itemOptions' => ['class' => 'item'],
  		]); ?>
-<?php 
-foreach ($dataProvider->models as $model) {
-?>
-<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-	<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-	<a href="#" class="thumbnail">
-	<?php echo Html::img('@web/uploads/'.$model->miniatura, ['height'=>170]); ?>
-	</a>
-	</div>
-	<div class="col-lg-6 col-sm-6 col-md-6 col-xs-6">
-<?php echo "<h3>$model->model</h3>"; ?>
 </div>
-</div>
-<?php } ?>
+
+
 
 <div class="samochod-index">
 
    
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+   
 
 
-    <?= GridView::widget([
+    <?php 
+    
+   /*   
+  echo    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -57,6 +87,8 @@ foreach ($dataProvider->models as $model) {
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]);
+    */
+     ?>
 
 </div>

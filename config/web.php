@@ -50,7 +50,14 @@ $config = [
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
     				],
     				],
+    		'formatter' => [
+    				'class' => 'yii\i18n\formatter',
+    				'thousandSeparator' => ' ',
+    				'decimalSeparator' => ',',
+    				'currencyCode' => 'PLN'
+    		],
     ],
+	
     'params' => $params,
 ];
 
