@@ -8,7 +8,10 @@ use app\models\SamochodSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
+//use yii\web\UploadedFile;
+use app\models\ZapytajForm;
+use yii\helpers\Html;
+
 
 /**
  * SamochodController implements the CRUD actions for Samochod model.
@@ -96,7 +99,8 @@ class SamochodController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-		
+       
+        $model->scenario='update';
         if ($model->load(Yii::$app->request->post())) {
         	
         	if ($model->upload()) {
@@ -185,6 +189,34 @@ class SamochodController extends Controller
     public function actionSzczegoly($id){
     	return $this->render('szczegoly', [
     			'model' => $this->findModel($id),
+    	]);
+    }
+    
+    public function actionZapytaj($id){
+    	$model = new ZapytajForm();
+    	$samochod = $this->findModel($id);
+    	
+    
+    	
+    	if ($model->load(Yii::$app->request->post())){
+    		$model->subject = "Pytanie o ofertę: id:". $samochod->id . "model: ". $samochod->model . "rocznik: " . $samochod->rocznik;
+    		$model->body = "<p>Proszę o ofertę na samochod: " . Html::a(  $samochod->model,   \Yii::$app->getUrlManager()->createAbsoluteUrl(['samochod/szczegoly', 'id'=>$samochod->id]) )."</p>".
+    				"<p>Z poważaniem: <br>". $model->name;
+    		if($model->contact(Yii::$app->params['adminEmail'])) {
+    	
+    		
+    		Yii::$app->session->setFlash('contactFormSubmitted');
+    		
+    		return $this->refresh();
+    		}
+    	}
+    	
+    	$model->subject = "Pytanie o ofertę: id:". $samochod->id . "model: ". $samochod->model . "rocznik: " . $samochod->rocznik;
+    	$model->body = "<p>Proszę o ofertę na samochod: " . Html::a(  $samochod->model,   \Yii::$app->getUrlManager()->createAbsoluteUrl(['samochod/szczegoly', 'id'=>$samochod->id]) )."</p>".
+    			"<p>Z poważaniem";
+    	
+    	return $this->render('zapytaj', [
+    			'model' =>$model,  'samochod'=> $this->findModel($id),
     	]);
     }
 }

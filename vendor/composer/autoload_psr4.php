@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'yii\\swiftmailer\\' => array($vendorDir . '/yiisoft/yii2-swiftmailer'),
+    'yii\\imagine\\' => array($vendorDir . '/yiisoft/yii2-imagine'),
     'yii\\gii\\' => array($vendorDir . '/yiisoft/yii2-gii'),
     'yii\\faker\\' => array($vendorDir . '/yiisoft/yii2-faker'),
     'yii\\debug\\' => array($vendorDir . '/yiisoft/yii2-debug'),
@@ -16,6 +17,7 @@ return array(
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
     'wadeshuler\\sliderrevolution\\' => array($vendorDir . '/wadeshuler/yii2-sliderrevolution'),
     'rsr\\yii2\\' => array($vendorDir . '/rsr/yii2-button-dropdown-sorter'),
+    'newerton\\fancybox\\' => array($vendorDir . '/newerton/yii2-fancybox'),
     'kop\\y2sp\\' => array($vendorDir . '/kop/yii2-scroll-pager'),
     'dosamigos\\ckeditor\\' => array($vendorDir . '/2amigos/yii2-ckeditor-widget/src'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),

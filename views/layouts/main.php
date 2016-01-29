@@ -19,6 +19,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <link rel="shortcut icon" sizes="16x16" href="<?php echo Yii::$app->request->baseUrl; ?>/grafika/indeks.png">
     <?php $this->head() ?>
 </head>
 <body>
@@ -27,7 +28,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'BMW ZKMotors',
+        'brandLabel' => Html::img('@web/grafika/bmw-modules.png', ['alt'=>Yii::$app->name, 'class'=>'bmw-logo img-responsive']),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -53,7 +54,7 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container">
+    <div class="container container-tresc">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>

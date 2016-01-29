@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\web\UploadedFile;
+use yii\imagine\Image;
 
 /**
  * This is the model class for table "samochod".
@@ -42,7 +43,7 @@ class Samochod extends \yii\db\ActiveRecord
         return [
             [['model', 'rocznik', 'pojemnosc', 'cena', 'zdjecie1', 'miniatura', 'opis'], 'required'],
             [['rocznik'], 'safe'],
-            [['pojemnosc'], 'integer'],
+            [['pojemnosc','przebieg'], 'integer'],
             [['cena'], 'number'],
             [['opis'], 'string'],
             [['model'], 'string', 'max' => 30],
@@ -71,6 +72,13 @@ class Samochod extends \yii\db\ActiveRecord
         ];
     }
     
+    public function scenarios()
+    {
+    	$scenarios = parent::scenarios();
+    	$scenarios['update'] = ['model', 'rocznik', 'pojemnosc', 'cena', 'zdjecie1', 'miniatura', 'opis', 'zdjecie2', 'zdjecie3', 'zdjecie4','przebieg'];//Scenario Values Only Accepted
+    	return $scenarios;
+    }
+    
     public function upload()
     {
     	// if ($this->validate()) {
@@ -78,20 +86,25 @@ class Samochod extends \yii\db\ActiveRecord
     	$this->plikMiniatura = UploadedFile::getInstance($this, 'plikMiniatura');
     	$path = Yii::$app->basePath. DIRECTORY_SEPARATOR.'web'. DIRECTORY_SEPARATOR. 'uploads'. DIRECTORY_SEPARATOR;
     	
+    	
     	if (!empty($this->plikMiniatura)) {
     		if (is_file($path.$this->miniatura)) {
     			unlink($path.$this->miniatura);
     		}
     	$this->miniatura = Yii::$app->security->generateRandomString(10).'.'.$this->plikMiniatura->extension;
     	$this->plikMiniatura->saveAs('uploads/' . $this->miniatura);
-    	} else {
+    	
+    	} else if($this->scenario == 'default') {
     		$this->addError('plikMiniatura', 'Brak miniatury');
     		return false;
     	}
     	
+    	
     	if(!empty($this->zdjecia)) {
+    		
     	$x=0;
     	foreach ($this->zdjecia as $file) {
+    		
     		$x++;
     		$poleZdjecia = 'zdjecie'.$x;
     		if (is_file($path.$this->$poleZdjecia)) {
@@ -99,6 +112,12 @@ class Samochod extends \yii\db\ActiveRecord
     		}
     		$this->$poleZdjecia = Yii::$app->security->generateRandomString(10).'.'.$file->extension;
     		$file->saveAs('uploads/' . $this->$poleZdjecia);
+    		
+    		//miniatury do fancybox
+    	 Image::thumbnail('@webroot/uploads/'. $this->$poleZdjecia, 120, 120)
+    		->save(Yii::getAlias('@webroot/uploads/thumb_'. $this->$poleZdjecia), ['quality' => 80]);
+    	
+    		
     	}
     	}
     	 else {
