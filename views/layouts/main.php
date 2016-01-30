@@ -19,6 +19,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <link rel="shortcut icon" sizes="16x16" href="<?php echo Yii::$app->request->baseUrl; ?>/grafika/indeks.png">
     <?php $this->head() ?>
 </head>
 <body>
@@ -27,7 +28,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'BMW Zkmorost',
+        'brandLabel' => Html::img('@web/grafika/bmw-modules.png', ['alt'=>Yii::$app->name, 'class'=>'bmw-logo img-responsive']),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -37,21 +38,23 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Samochody od zaraz', 'url' => ['/site/about']],
+        		
+            ['label' => 'Samochody od zaraz', 'url' => ['/samochod/lista']],
             ['label' => 'Kontakt', 'url' => ['/site/contact']],
-//             Yii::$app->user->isGuest ?
-//                 ['label' => 'Login', 'url' => ['/site/login']] :
-//                 [
-//                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-//                     'url' => ['/site/logout'],
-//                     'linkOptions' => ['data-method' => 'post']
-//                 ],
+        	['label'=>'Administracja Samochodami', 'url'=>['/samochod/index'] , 'visible'=>!Yii::$app->user->isGuest],
+            Yii::$app->user->isGuest ?
+                ['label' => 'Zaloguj się', 'url' => ['/site/login']] :
+                [
+                    'label' => 'Wyloguj (' . Yii::$app->user->identity->username . ')',
+                    'url' => ['/site/logout'],
+                    'linkOptions' => ['data-method' => 'post']
+                ],
         ],
     ]);
     NavBar::end();
     ?>
 
-    <div class="container">
+    <div class="container container-tresc">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
@@ -61,9 +64,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; ZK Motors Kielce <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right">biuro@bmw-zkmotors.pl</p>
     </div>
 </footer>
 

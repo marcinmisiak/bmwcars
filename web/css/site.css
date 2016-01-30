@@ -89,3 +89,22 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+.ias-trigger {
+	width:100%;
+	display:table;
+}
+.sortowanie {
+	text-align: right;
+	width:100%;
+	display:table;	
+}
+.btnSzukaj {
+	vertical-align: bottom;
+}
+.container-tresc {
+	margin-top: 60px;
+}
+.bmw-logo {
+margin-top: -10px;
+}

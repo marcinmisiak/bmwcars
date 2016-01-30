@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	<buildpathentry kind="src" path=""/>
+	<buildpathentry kind="src" path="vendor/ezyang/htmlpurifier/library"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2"/>
+	<buildpathentry kind="src" path="vendor/swiftmailer/swiftmailer/lib"/>
+	<buildpathentry kind="src" path="vendor/rsr/yii2-button-dropdown-sorter"/>
+	<buildpathentry kind="src" path="vendor/2amigos/yii2-ckeditor-widget/src"/>
+	<buildpathentry kind="src" path="vendor/phpspec/php-diff/lib"/>
+	<buildpathentry kind="src" path="vendor/cebe/markdown"/>
+	<buildpathentry kind="src" path="vendor/wadeshuler/yii2-sliderrevolution"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-composer"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-gii"/>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry kind="src" path="vendor/composer"/>
+	<buildpathentry kind="src" path="vendor/kartik-v/bootstrap-fileinput"/>
+	<buildpathentry kind="src" path="vendor/kartik-v/yii2-widget-fileinput"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-bootstrap"/>
+	<buildpathentry kind="src" path="vendor/kop/yii2-scroll-pager"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-imagine"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-debug"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-codeception"/>
+	<buildpathentry kind="src" path="vendor/fzaninotto/faker/src/Faker"/>
+	<buildpathentry kind="src" path="vendor/newerton/yii2-fancybox"/>
+	<buildpathentry kind="src" path="vendor/imagine/imagine/lib"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-faker"/>
+	<buildpathentry kind="src" path="vendor/yiisoft/yii2-swiftmailer"/>
+	<buildpathentry kind="src" path="vendor/kartik-v/yii2-krajee-base"/>
 </buildpath>
