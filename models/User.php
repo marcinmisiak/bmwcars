@@ -27,12 +27,15 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
         ],
     ];
 
+    
     /**
      * @inheritdoc
      */
     public static function findIdentity($id)
     {
-        return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
+    
+    	return PsEmployee::findOne(['id_employee'=>$id]);
+      //  return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
     }
 
     /**
@@ -40,6 +43,9 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
+    	throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
+    	 
+    	/*
         foreach (self::$users as $user) {
             if ($user['accessToken'] === $token) {
                 return new static($user);
@@ -47,6 +53,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
         }
 
         return null;
+        */
     }
 
     /**
@@ -57,6 +64,8 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      */
     public static function findByUsername($username)
     {
+    	return PsEmployee::findOne(['email'=>$username]);
+    	/*
         foreach (self::$users as $user) {
             if (strcasecmp($user['username'], $username) === 0) {
                 return new static($user);
@@ -64,6 +73,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
         }
 
         return null;
+        */
     }
 
     /**
@@ -71,7 +81,9 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      */
     public function getId()
     {
-        return $this->id;
+    	return $this->getPrimaryKey();
+    	 
+      //  return $this->id;
     }
 
     /**
@@ -79,7 +91,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      */
     public function getAuthKey()
     {
-        return $this->authKey;
+        return $this->password; // nie ma pola authkey
     }
 
     /**
@@ -96,8 +108,5 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      * @param  string  $password password to validate
      * @return boolean if password provided is valid for current user
      */
-    public function validatePassword($password)
-    {
-        return $this->password === $password;
-    }
+  
 }

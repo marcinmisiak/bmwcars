@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'model',
             'rocznik',
             'pojemnosc',
+        		'przebieg',
             'cena',
         		[ 'attribute'=> 'miniatura', 'format' => "html", 'value'=>Html::img('@web/uploads/'.$model->miniatura, ['height'=>100]) ] ,
            [ 'attribute'=> 'zdjecie1', 'format' => "html", 'value'=>Html::img('@web/uploads/'.$model->zdjecie1, ['height'=>150]) ] ,

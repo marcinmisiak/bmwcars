@@ -18,6 +18,7 @@ use kartik\file\FileInput;
     <?= $form->field($model, 'rocznik')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'pojemnosc')->textInput() ?>
+    <?= $form->field($model, 'przebieg')->textInput() ?>
 
     <?= $form->field($model, 'cena')->textInput(['maxlength' => true]) ?>
 

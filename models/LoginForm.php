@@ -16,7 +16,7 @@ class LoginForm extends Model
 
     private $_user = false;
 
-
+    
     /**
      * @return array the validation rules.
      */
@@ -30,6 +30,16 @@ class LoginForm extends Model
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
         ];
+    }
+    
+    public function attributeLabels()
+    {
+    	return [
+    			'username'=>'Użytkownik',
+    			'password'=>'Hasło',
+    			'rememberMe'=>'Zapamiętaj mnie',
+    			
+    	];
     }
 
     /**
@@ -45,7 +55,7 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError($attribute, 'Nieprawidłowe hasło lub login.');
             }
         }
     }

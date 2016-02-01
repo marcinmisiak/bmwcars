@@ -24,13 +24,13 @@
 		"yiisoft/yii2" : "2.0.6",
 		"yiisoft/yii2-bootstrap" : "*",
 		"yiisoft/yii2-swiftmailer" : "*",
-		"yiisoft/yii2-imagine": "*",
+		"yiisoft/yii2-imagine" : "*",
 		"2amigos/yii2-ckeditor-widget" : "*",
 		"rsr/yii2-button-dropdown-sorter" : "*",
 		"kop/yii2-scroll-pager" : "dev-master",
 		"wadeshuler/yii2-sliderrevolution" : "@dev",
 		"newerton/yii2-fancybox" : "dev-master",
-		"kartik-v/yii2-widget-fileinput": "@dev"
+		"kartik-v/yii2-widget-fileinput" : "@dev"
 	},
 	"require-dev" : {
 		"yiisoft/yii2-codeception" : "*",
